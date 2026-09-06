@@ -5,8 +5,8 @@ import 'package:todoapp/core/theme/dark_theme.dart';
 // ignore: unused_import
 import 'package:todoapp/core/theme/light_theme.dart';
 import 'package:todoapp/core/theme/theme_controller.dart';
-import 'package:todoapp/screens/main_screen.dart';
-import 'package:todoapp/screens/welcome_screen.dart';
+import 'package:todoapp/features/navigation/main_screen.dart';
+import 'package:todoapp/features/welcome/welcome_screen.dart';
 
 
 // ValueNotifier<ThemeMode> themeNotifier =ValueNotifier(ThemeMode.dark);

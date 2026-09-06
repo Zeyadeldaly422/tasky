@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todoapp/core/constans/storage_key.dart';
 import 'package:todoapp/core/servers/preferences_manager.dart';
 import 'package:todoapp/core/widgets/custom_text_form_field.dart';
 
@@ -66,7 +67,7 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
               ElevatedButton(
                 onPressed: () async {
                   if (_key.currentState!.validate()) {
-                     PreferencesManager().setString('username',usernameController.value.text);
+                     PreferencesManager().setString(StorageKey.username, usernameController.value.text);
                      PreferencesManager().setString('motivationQuote',motivationController.value.text);
                     if (mounted) {
         Navigator.pop(context, true);

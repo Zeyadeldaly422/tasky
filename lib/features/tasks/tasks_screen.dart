@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:todoapp/Widgets/taskList_Widget.dart';
+import 'package:todoapp/core/components/tasklist_widget.dart';
 import 'package:todoapp/core/servers/preferences_manager.dart';
 import 'package:todoapp/models/task_model.dart';
 

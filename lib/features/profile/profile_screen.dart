@@ -2,11 +2,12 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:todoapp/core/constans/storage_key.dart';
 import 'package:todoapp/core/servers/preferences_manager.dart';
 import 'package:todoapp/core/theme/theme_controller.dart';
 import 'package:todoapp/core/widgets/custom_svg_picture.dart';
-import 'package:todoapp/screens/user_details_screen.dart';
-import 'package:todoapp/screens/welcome_screen.dart';
+import 'package:todoapp/features/profile/user_details_screen.dart';
+import 'package:todoapp/features/welcome/welcome_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -29,7 +30,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   void _loadData() async {
     setState(() {
-      usernamePath = PreferencesManager().getString('username') ?? '';
+      usernamePath = PreferencesManager().getString(StorageKey.username) ?? '';
       motivationQuote =
           PreferencesManager().getString('motivationQuote') ??
           "One task at a time. One step closer.";
@@ -151,7 +152,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 const Divider(thickness: 1),
                 ListTile(
                   onTap: () async {
-                    PreferencesManager().remove("username");
+                    PreferencesManager().remove(StorageKey.username);
                     PreferencesManager().remove("motivationQuote");
                     PreferencesManager().remove("tasks");
                     Navigator.pushAndRemoveUntil(

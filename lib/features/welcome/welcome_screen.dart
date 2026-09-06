@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:todoapp/core/constans/storage_key.dart';
 import 'package:todoapp/core/servers/preferences_manager.dart';
 import 'package:todoapp/core/widgets/custom_svg_picture.dart';
 import 'package:todoapp/core/widgets/custom_text_form_field.dart';
-import 'package:todoapp/screens/main_screen.dart';
+import 'package:todoapp/features/navigation/main_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   WelcomeScreen({super.key});
@@ -96,7 +97,7 @@ class WelcomeScreen extends StatelessWidget {
                           ),
                           onPressed: () async {
                             if (_key.currentState?.validate() ?? false) {
-                            await  PreferencesManager().setString("username",usernameController.value.text);
+                            await  PreferencesManager().setString(StorageKey.username, usernameController.value.text);
                              
                               Navigator.push(
                                 context,
